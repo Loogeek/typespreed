@@ -20,7 +20,7 @@ function app<T extends {new (...args: any[]): {}}>(constructor: T) {
         
             for(let p of testPaths) {
                 const moduleName = p.replace('.d.ts', '').replace('.ts', '')
-                import(testDir + "/" + moduleName);    
+                await import(testDir + "/" + moduleName);    
             }                
         } catch (error) {
             console.error(error)
